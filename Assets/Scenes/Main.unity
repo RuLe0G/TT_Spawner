@@ -391,7 +391,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1648901981}
   box: {fileID: 3305829063832536469, guid: 490b5f9fead376247ad30f0a0f295bbb, type: 3}
-  _spawnRate: 3
+  inputSpeed: {fileID: 1719514157}
+  inputDistance: {fileID: 356774438}
+  inputSpawnRate: {fileID: 1942616432}
 --- !u!1 &356774436
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,6 +406,7 @@ GameObject:
   - component: {fileID: 356774440}
   - component: {fileID: 356774439}
   - component: {fileID: 356774438}
+  - component: {fileID: 356774441}
   m_Layer: 5
   m_Name: Distance_Input
   m_TagString: Untagged
@@ -488,14 +491,26 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 284737286}
+        m_TargetAssemblyTypeName: Spawn, Assembly-CSharp
+        m_MethodName: UpdateParams
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 356774441}
+          m_ObjectArgumentAssemblyTypeName: ChoseParams, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 
+  m_Text: 15
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -538,6 +553,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356774436}
   m_CullTransparentMesh: 1
+--- !u!114 &356774441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356774436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aabf4d9e6460c8147b7571490dbf8fa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choseParams: 1
 --- !u!1 &437752321
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,8 +711,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587265193}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 5, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 1}
+  m_LocalPosition: {x: 5, y: 0, z: 20}
+  m_LocalScale: {x: 50, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1067518169}
@@ -901,11 +929,11 @@ MonoBehaviour:
     m_MaxSize: 80
     m_Alignment: 3
     m_AlignByGeometry: 1
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 2
 --- !u!222 &918330709
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1070,14 +1098,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 0, y: 6.1, z: -9.67}
+  m_LocalRotation: {x: 0.35836798, y: 0, z: 0, w: 0.93358046}
+  m_LocalPosition: {x: 0, y: 13.04, z: -9.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 42, y: 0, z: 0}
 --- !u!1 &1063513982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,11 +1173,11 @@ MonoBehaviour:
     m_MaxSize: 80
     m_Alignment: 3
     m_AlignByGeometry: 1
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 5
 --- !u!222 &1063513985
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1220,8 +1248,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114841532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: 20}
+  m_LocalScale: {x: 1, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1067518169}
@@ -1303,8 +1331,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1201046277}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -5, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 1}
+  m_LocalPosition: {x: -5, y: 0, z: 20}
+  m_LocalScale: {x: 50, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1067518169}
@@ -1427,11 +1455,11 @@ MonoBehaviour:
     m_MaxSize: 80
     m_Alignment: 3
     m_AlignByGeometry: 1
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 15
 --- !u!222 &1298209340
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1483,6 +1511,7 @@ GameObject:
   - component: {fileID: 1719514159}
   - component: {fileID: 1719514158}
   - component: {fileID: 1719514157}
+  - component: {fileID: 1719514160}
   m_Layer: 5
   m_Name: Speed_inpit
   m_TagString: Untagged
@@ -1561,20 +1590,32 @@ MonoBehaviour:
   m_LineType: 0
   m_HideMobileInput: 0
   m_CharacterValidation: 2
-  m_CharacterLimit: 0
+  m_CharacterLimit: 5
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 284737286}
+        m_TargetAssemblyTypeName: Spawn, Assembly-CSharp
+        m_MethodName: UpdateParams
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1719514160}
+          m_ObjectArgumentAssemblyTypeName: ChoseParams, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 
+  m_Text: 5
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -1617,6 +1658,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719514155}
   m_CullTransparentMesh: 1
+--- !u!114 &1719514160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719514155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aabf4d9e6460c8147b7571490dbf8fa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choseParams: 2
 --- !u!1 &1942616430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,6 +1683,7 @@ GameObject:
   - component: {fileID: 1942616434}
   - component: {fileID: 1942616433}
   - component: {fileID: 1942616432}
+  - component: {fileID: 1942616435}
   m_Layer: 5
   m_Name: SpawnRate_input
   m_TagString: Untagged
@@ -1713,14 +1768,26 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 284737286}
+        m_TargetAssemblyTypeName: Spawn, Assembly-CSharp
+        m_MethodName: UpdateParams
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1942616435}
+          m_ObjectArgumentAssemblyTypeName: ChoseParams, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 
+  m_Text: 2
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -1763,6 +1830,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1942616430}
   m_CullTransparentMesh: 1
+--- !u!114 &1942616435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942616430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aabf4d9e6460c8147b7571490dbf8fa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choseParams: 0
 --- !u!1 &1973616664
 GameObject:
   m_ObjectHideFlags: 0

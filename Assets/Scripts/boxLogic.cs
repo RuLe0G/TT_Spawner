@@ -4,30 +4,19 @@ using UnityEngine;
 /// </summary>
 public class boxLogic : MonoBehaviour
 {
-    [SerializeField]
-    private float _speed;
-
     private Vector3 oldPosition;
     private float curDistance = 0;
-
-    [SerializeField]
-    private float _distance;
-    public float distance
-    {
-        get { return _distance; }
-        set { _distance = value; }
-    }
-    public float speed
-    {
-        get { return _speed; }
-        set { _speed = value; }
-    }
+    private float speed;
+    private float distance;
     /// <summary>
     /// Changeinitial parameters of object
     /// </summary>
-    public void Init()
+    /// <param name="sp">boxing speed</param>
+    /// <param name="dst">boxing distance</param>
+    public void Init(float sp, float dst)
     {
-        //
+        speed = sp;
+        distance = dst;
     }
     private void Start()
     {
